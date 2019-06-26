@@ -16,6 +16,12 @@
 		3CC23A5222C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A5122C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift */; };
 		3CC23A6522C42B6700F64DB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6422C42B6700F64DB5 /* Constants.swift */; };
 		3CC23A6722C42B7900F64DB5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6622C42B7900F64DB5 /* Network.swift */; };
+		3CC23A6922C42F4E00F64DB5 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6822C42F4E00F64DB5 /* CategoriesTableViewController.swift */; };
+		3CC23A6B22C42F5F00F64DB5 /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6A22C42F5F00F64DB5 /* JokesViewController.swift */; };
+		3CC23A6D22C42F7400F64DB5 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6C22C42F7400F64DB5 /* CategoriesViewModel.swift */; };
+		3CC23A6F22C42F8000F64DB5 /* JokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6E22C42F8000F64DB5 /* JokesViewModel.swift */; };
+		3CC23A7122C42FA800F64DB5 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7022C42FA800F64DB5 /* Joke.swift */; };
+		3CC23A7322C4358600F64DB5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7222C4358600F64DB5 /* Category.swift */; };
 		59B42BF828C7B7CCF58CC728 /* Pods_GuiaBolsoChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F37CBBBC174BC4A2741833 /* Pods_GuiaBolsoChallengeTests.framework */; };
 		9AE7B8BBB60428298C02D16A /* Pods_GuiaBolsoChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EA8E817610553F6E670ED2 /* Pods_GuiaBolsoChallengeUITests.framework */; };
 		D646AD8BF9872F72EC269A56 /* Pods_GuiaBolsoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0A9B0EEA7AA3D24B1A95BA /* Pods_GuiaBolsoChallenge.framework */; };
@@ -56,6 +62,12 @@
 		3CC23A5322C4297200F64DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CC23A6422C42B6700F64DB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3CC23A6622C42B7900F64DB5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		3CC23A6822C42F4E00F64DB5 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		3CC23A6A22C42F5F00F64DB5 /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
+		3CC23A6C22C42F7400F64DB5 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		3CC23A6E22C42F8000F64DB5 /* JokesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewModel.swift; sourceTree = "<group>"; };
+		3CC23A7022C42FA800F64DB5 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		3CC23A7222C4358600F64DB5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E2987C83B2404055D85E5AE /* Pods-GuiaBolsoChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeUITests/Pods-GuiaBolsoChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A13EF7B78C2F3D9E7462FB9 /* Pods-GuiaBolsoChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeTests/Pods-GuiaBolsoChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		75F37CBBBC174BC4A2741833 /* Pods_GuiaBolsoChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuiaBolsoChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				3CC23A3522C4296F00F64DB5 /* Main.storyboard */,
+				3CC23A6822C42F4E00F64DB5 /* CategoriesTableViewController.swift */,
+				3CC23A6A22C42F5F00F64DB5 /* JokesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +183,8 @@
 		3CC23A6222C42AE000F64DB5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3CC23A6C22C42F7400F64DB5 /* CategoriesViewModel.swift */,
+				3CC23A6E22C42F8000F64DB5 /* JokesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -176,6 +192,8 @@
 		3CC23A6322C42AE700F64DB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3CC23A7022C42FA800F64DB5 /* Joke.swift */,
+				3CC23A7222C4358600F64DB5 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,9 +425,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC23A3422C4296F00F64DB5 /* ViewController.swift in Sources */,
+				3CC23A7322C4358600F64DB5 /* Category.swift in Sources */,
+				3CC23A6B22C42F5F00F64DB5 /* JokesViewController.swift in Sources */,
 				3CC23A3222C4296F00F64DB5 /* AppDelegate.swift in Sources */,
 				3CC23A6722C42B7900F64DB5 /* Network.swift in Sources */,
 				3CC23A6522C42B6700F64DB5 /* Constants.swift in Sources */,
+				3CC23A7122C42FA800F64DB5 /* Joke.swift in Sources */,
+				3CC23A6922C42F4E00F64DB5 /* CategoriesTableViewController.swift in Sources */,
+				3CC23A6D22C42F7400F64DB5 /* CategoriesViewModel.swift in Sources */,
+				3CC23A6F22C42F8000F64DB5 /* JokesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

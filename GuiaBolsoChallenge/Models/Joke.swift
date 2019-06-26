@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct Joke: Decodable {
+    var id: String
+    var value: String
+    var url: String
+    var icon_url: String
+}
