@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Joke: Decodable {
+class Joke: Decodable {
     var id: String
     var value: String
     var url: String
