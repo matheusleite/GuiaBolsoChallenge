@@ -10,18 +10,26 @@ import UIKit
 
 class JokesViewController: UIViewController {
 
-    var category = ""
-    
+    var jokesViewModel : JokesViewModel?
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
-    private let jokesViewModel = JokesViewModel()
+    var category = "" {
+        didSet {
+            self.jokesViewModel = JokesViewModel(category: self.category)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
+        self.jokesViewModel?.loadJoke = {
+            self.setUI()
+        }
+    }
+    
+    func setUI() {
+        self.jokesViewModel?.setText(label: textLabel)
+        self.jokesViewModel?.setImage(imageView: iconImageView)
     }
     
 

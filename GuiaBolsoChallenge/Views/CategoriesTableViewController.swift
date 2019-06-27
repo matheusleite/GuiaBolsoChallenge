@@ -21,10 +21,10 @@ class CategoriesTableViewController: UITableViewController {
             }
         }
         
-        //remove adicional lines
-//        let view = UIView()
-//        view.backgroundColor = .white
-//        self.view = view
+        //TODO: Show a alert indicate error
+        self.categoriesViewModel.hasError = {
+            
+        }
         
         tableView.rowHeight = 60
         tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)

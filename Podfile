@@ -7,6 +7,7 @@ target 'GuiaBolsoChallenge' do
 
   # Pods for GuiaBolsoChallenge
   pod 'SwiftLint'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'GuiaBolsoChallengeTests' do
     inherit! :search_paths
