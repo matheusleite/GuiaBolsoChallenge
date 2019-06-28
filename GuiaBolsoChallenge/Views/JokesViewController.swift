@@ -41,6 +41,4 @@ class JokesViewController: UIViewController {
         self.jokesViewModel?.setText(label: textLabel)
         self.jokesViewModel?.setImage(imageView: iconImageView)
     }
-    
-
 }
