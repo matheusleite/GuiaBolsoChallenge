@@ -1,15 +1,14 @@
 //
-//  GuiaBolsoChallengeTests.swift
+//  CategoriesTableViewTests.swift
 //  GuiaBolsoChallengeTests
 //
-//  Created by Matheus Leite on 26/06/19.
+//  Created by Matheus Leite on 27/06/19.
 //  Copyright © 2019 Matheus Leite. All rights reserved.
 //
 
 import XCTest
-@testable import GuiaBolsoChallenge
 
-class GuiaBolsoChallengeTests: XCTestCase {
+class CategoriesTableViewTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

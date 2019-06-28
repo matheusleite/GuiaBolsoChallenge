@@ -1,14 +1,14 @@
 //
-//  GuiaBolsoChallengeUITests.swift
+//  JokesViewControllerUITests.swift
 //  GuiaBolsoChallengeUITests
 //
-//  Created by Matheus Leite on 26/06/19.
+//  Created by Matheus Leite on 27/06/19.
 //  Copyright © 2019 Matheus Leite. All rights reserved.
 //
 
 import XCTest
 
-class GuiaBolsoChallengeUITests: XCTestCase {
+class JokesViewControllerUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -11,6 +11,7 @@ import UIKit
 class JokesViewController: UIViewController {
 
     var jokesViewModel : JokesViewModel?
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
@@ -18,6 +19,15 @@ class JokesViewController: UIViewController {
         didSet {
             self.jokesViewModel = JokesViewModel(category: self.category)
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        //shadow in card view
+        cardView.layer.shadowColor = UIColor.black.cgColor
+        cardView.layer.shadowOpacity = 0.3
+        cardView.layer.shadowOffset = .zero
+        cardView.layer.shadowRadius = 5
+        cardView.layer.cornerRadius = 10
     }
     
     override func viewDidLoad() {

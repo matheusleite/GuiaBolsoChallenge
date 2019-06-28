@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3CC23A3222C4296F00F64DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A3122C4296F00F64DB5 /* AppDelegate.swift */; };
-		3CC23A3422C4296F00F64DB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A3322C4296F00F64DB5 /* ViewController.swift */; };
 		3CC23A3722C4296F00F64DB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC23A3522C4296F00F64DB5 /* Main.storyboard */; };
 		3CC23A3922C4297100F64DB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC23A3822C4297100F64DB5 /* Assets.xcassets */; };
 		3CC23A3C22C4297100F64DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC23A3A22C4297100F64DB5 /* LaunchScreen.storyboard */; };
-		3CC23A4722C4297200F64DB5 /* GuiaBolsoChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A4622C4297200F64DB5 /* GuiaBolsoChallengeTests.swift */; };
-		3CC23A5222C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A5122C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift */; };
 		3CC23A6522C42B6700F64DB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6422C42B6700F64DB5 /* Constants.swift */; };
 		3CC23A6722C42B7900F64DB5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6622C42B7900F64DB5 /* Network.swift */; };
 		3CC23A6922C42F4E00F64DB5 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A6822C42F4E00F64DB5 /* CategoriesTableViewController.swift */; };
@@ -24,6 +21,10 @@
 		3CC23A7322C4358600F64DB5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7222C4358600F64DB5 /* Category.swift */; };
 		3CC23A7722C471EB00F64DB5 /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7622C471EB00F64DB5 /* CategoriesTableViewCell.swift */; };
 		3CC23A7922C4720C00F64DB5 /* CategoriesTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7822C4720C00F64DB5 /* CategoriesTableViewCellViewModel.swift */; };
+		3CC23A7B22C5B7D300F64DB5 /* CategoriesTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7A22C5B7D300F64DB5 /* CategoriesTableViewTests.swift */; };
+		3CC23A7D22C5B7E900F64DB5 /* JokesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7C22C5B7E900F64DB5 /* JokesViewControllerTests.swift */; };
+		3CC23A8122C5B86500F64DB5 /* CategoriesTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A8022C5B86500F64DB5 /* CategoriesTableViewUITests.swift */; };
+		3CC23A8322C5B87600F64DB5 /* JokesViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A8222C5B87600F64DB5 /* JokesViewControllerUITests.swift */; };
 		59B42BF828C7B7CCF58CC728 /* Pods_GuiaBolsoChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F37CBBBC174BC4A2741833 /* Pods_GuiaBolsoChallengeTests.framework */; };
 		9AE7B8BBB60428298C02D16A /* Pods_GuiaBolsoChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EA8E817610553F6E670ED2 /* Pods_GuiaBolsoChallengeUITests.framework */; };
 		D646AD8BF9872F72EC269A56 /* Pods_GuiaBolsoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0A9B0EEA7AA3D24B1A95BA /* Pods_GuiaBolsoChallenge.framework */; };
@@ -51,16 +52,13 @@
 		35BF1AB853ADC4EE0912B599 /* Pods-GuiaBolsoChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeTests/Pods-GuiaBolsoChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC23A2E22C4296F00F64DB5 /* GuiaBolsoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuiaBolsoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC23A3122C4296F00F64DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3CC23A3322C4296F00F64DB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3CC23A3622C4296F00F64DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CC23A3822C4297100F64DB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CC23A3B22C4297100F64DB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CC23A3D22C4297100F64DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CC23A4222C4297200F64DB5 /* GuiaBolsoChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuiaBolsoChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CC23A4622C4297200F64DB5 /* GuiaBolsoChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuiaBolsoChallengeTests.swift; sourceTree = "<group>"; };
 		3CC23A4822C4297200F64DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CC23A4D22C4297200F64DB5 /* GuiaBolsoChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuiaBolsoChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CC23A5122C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuiaBolsoChallengeUITests.swift; sourceTree = "<group>"; };
 		3CC23A5322C4297200F64DB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CC23A6422C42B6700F64DB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3CC23A6622C42B7900F64DB5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -72,6 +70,10 @@
 		3CC23A7222C4358600F64DB5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3CC23A7622C471EB00F64DB5 /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		3CC23A7822C4720C00F64DB5 /* CategoriesTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		3CC23A7A22C5B7D300F64DB5 /* CategoriesTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewTests.swift; sourceTree = "<group>"; };
+		3CC23A7C22C5B7E900F64DB5 /* JokesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewControllerTests.swift; sourceTree = "<group>"; };
+		3CC23A8022C5B86500F64DB5 /* CategoriesTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewUITests.swift; sourceTree = "<group>"; };
+		3CC23A8222C5B87600F64DB5 /* JokesViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewControllerUITests.swift; sourceTree = "<group>"; };
 		4E2987C83B2404055D85E5AE /* Pods-GuiaBolsoChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeUITests/Pods-GuiaBolsoChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A13EF7B78C2F3D9E7462FB9 /* Pods-GuiaBolsoChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeTests/Pods-GuiaBolsoChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		75F37CBBBC174BC4A2741833 /* Pods_GuiaBolsoChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuiaBolsoChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +141,6 @@
 				3CC23A6122C42ADA00F64DB5 /* Views */,
 				3CC23A6022C42ACE00F64DB5 /* Helpers */,
 				3CC23A3122C4296F00F64DB5 /* AppDelegate.swift */,
-				3CC23A3322C4296F00F64DB5 /* ViewController.swift */,
 				3CC23A3822C4297100F64DB5 /* Assets.xcassets */,
 				3CC23A3A22C4297100F64DB5 /* LaunchScreen.storyboard */,
 				3CC23A3D22C4297100F64DB5 /* Info.plist */,
@@ -150,8 +151,9 @@
 		3CC23A4522C4297200F64DB5 /* GuiaBolsoChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				3CC23A4622C4297200F64DB5 /* GuiaBolsoChallengeTests.swift */,
 				3CC23A4822C4297200F64DB5 /* Info.plist */,
+				3CC23A7A22C5B7D300F64DB5 /* CategoriesTableViewTests.swift */,
+				3CC23A7C22C5B7E900F64DB5 /* JokesViewControllerTests.swift */,
 			);
 			path = GuiaBolsoChallengeTests;
 			sourceTree = "<group>";
@@ -159,8 +161,9 @@
 		3CC23A5022C4297200F64DB5 /* GuiaBolsoChallengeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3CC23A5122C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift */,
 				3CC23A5322C4297200F64DB5 /* Info.plist */,
+				3CC23A8022C5B86500F64DB5 /* CategoriesTableViewUITests.swift */,
+				3CC23A8222C5B87600F64DB5 /* JokesViewControllerUITests.swift */,
 			);
 			path = GuiaBolsoChallengeUITests;
 			sourceTree = "<group>";
@@ -453,7 +456,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CC23A3422C4296F00F64DB5 /* ViewController.swift in Sources */,
 				3CC23A7322C4358600F64DB5 /* Category.swift in Sources */,
 				3CC23A7722C471EB00F64DB5 /* CategoriesTableViewCell.swift in Sources */,
 				3CC23A6B22C42F5F00F64DB5 /* JokesViewController.swift in Sources */,
@@ -472,7 +474,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CC23A4722C4297200F64DB5 /* GuiaBolsoChallengeTests.swift in Sources */,
+				3CC23A7D22C5B7E900F64DB5 /* JokesViewControllerTests.swift in Sources */,
+				3CC23A7B22C5B7D300F64DB5 /* CategoriesTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +483,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CC23A5222C4297200F64DB5 /* GuiaBolsoChallengeUITests.swift in Sources */,
+				3CC23A8322C5B87600F64DB5 /* JokesViewControllerUITests.swift in Sources */,
+				3CC23A8122C5B86500F64DB5 /* CategoriesTableViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
