@@ -10,11 +10,11 @@ import Foundation
 
 public class CategoriesTableViewCellViewModel {
     public let categoryName: String
-    
+
     init(_ categoryName: String) {
         self.categoryName = categoryName
     }
-    
+
     public func textLabel() -> String {
         return self.categoryName.capitalized
     }

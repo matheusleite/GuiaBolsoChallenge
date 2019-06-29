@@ -9,24 +9,23 @@
 import UIKit
 
 class CategoriesTableViewController: UITableViewController, loadCategoriesProtocol {
-
     private let cellIdentifier = "categoriesCell"
     let categoriesViewModel = CategoriesViewModel()
     private let activityIndicator = UIActivityIndicatorView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //set delegate to handle protocol
         self.categoriesViewModel.delegate = self
-        
+
         self.configLoading()
-        
+
         //config table
         tableView.rowHeight = 60
         tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
     }
-    
+
     //refresh table with data
     func sendCategories(categories: [String]) {
         DispatchQueue.main.async {
@@ -34,7 +33,7 @@ class CategoriesTableViewController: UITableViewController, loadCategoriesProtoc
             self.tableView.reloadData()
         }
     }
-    
+
     //show a alert if request fail
     func requestError(alertError: UIAlertController) {
         DispatchQueue.main.async {
@@ -51,7 +50,7 @@ class CategoriesTableViewController: UITableViewController, loadCategoriesProtoc
         tableView.backgroundView = activityIndicator
         self.activityIndicator.startAnimating()
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,12 +62,14 @@ class CategoriesTableViewController: UITableViewController, loadCategoriesProtoc
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! CategoriesTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: self.cellIdentifier,
+            for: indexPath) as! CategoriesTableViewCell
         cell.setup(viewModel: self.categoriesViewModel.setCell(index: indexPath.row))
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "goToDetail", sender: indexPath.row)
     }
@@ -76,9 +77,7 @@ class CategoriesTableViewController: UITableViewController, loadCategoriesProtoc
     // MARK: - Navigation
     //pass selected catetory to jokeViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! JokesViewController
-        vc.category = self.categoriesViewModel.categories[sender as! Int]
+        let jokesVC = segue.destination as! JokesViewController
+        jokesVC.category = self.categoriesViewModel.categories[sender as! Int]
     }
-
-
 }

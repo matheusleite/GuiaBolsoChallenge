@@ -15,23 +15,21 @@ protocol loadCategoriesProtocol {
 }
 
 public class CategoriesViewModel {
-    
     private let network = Network()
     public var categories = [String]()
-    var delegate : loadCategoriesProtocol?
-    
+    var delegate: loadCategoriesProtocol?
+
     init() {
         self.getCategories()
     }
-    
+
     public func getCategories() {
         self.network.get(endpoint: "/jokes/categories") { (data, error) in
-            
             if (error != nil) {
                 self.delegate?.requestError(alertError: self.prepareAlertError())
                 return
             }
-            
+
             //decode JSON data
             do {
                 self.categories = try JSONDecoder().decode([String].self, from: data as! Data)
@@ -41,17 +39,19 @@ public class CategoriesViewModel {
             }
         }
     }
-    
+
     func prepareAlertError() -> UIAlertController {
-        let alert = UIAlertController(title: "Sorry :(", message: "We can't load categories from server.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Sorry :(",
+                                      message: "We can't load categories from server.",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         return alert
     }
-    
+
     public func numberOfRows() -> Int {
         return categories.count
     }
-    
+
     public func setCell(index: Int) -> CategoriesTableViewCellViewModel {
         return CategoriesTableViewCellViewModel(categories[index])
     }

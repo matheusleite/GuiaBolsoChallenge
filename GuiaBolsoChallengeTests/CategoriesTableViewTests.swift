@@ -10,10 +10,9 @@ import XCTest
 @testable import GuiaBolsoChallenge
 
 class CategoriesTableViewTests: XCTestCase {
-
     var viewController: CategoriesTableViewController!
     var window: UIWindow!
-    
+
     override func setUp() {
         super.setUp()
         window = UIWindow()
@@ -22,19 +21,18 @@ class CategoriesTableViewTests: XCTestCase {
         viewController = storyboard.instantiateViewController(withIdentifier: "CategoriesTVC")
             as? CategoriesTableViewController
     }
-    
+
     override func tearDown() {
         window = nil
         super.tearDown()
     }
-    
+
     func loadView() {
         window.addSubview(viewController.view)
         RunLoop.current.run(until: Date())
     }
-    
+
     func testUI () {
         XCTAssertNotNil(viewController.tableView)
     }
-    
 }
