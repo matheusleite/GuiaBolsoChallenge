@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JokesViewController: UIViewController {
+class JokesViewController: UIViewController, loadJokeProtocol {
 
     var jokesViewModel : JokesViewModel?
     @IBOutlet weak var cardView: UIView!
@@ -18,7 +18,12 @@ class JokesViewController: UIViewController {
     var category = "" {
         didSet {
             self.jokesViewModel = JokesViewModel(category: self.category)
+            self.jokesViewModel?.delegate = self
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,11 +35,12 @@ class JokesViewController: UIViewController {
         cardView.layer.cornerRadius = 10
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.jokesViewModel?.loadJoke = {
-            self.setUI()
-        }
+    func sendJoke(joke: Joke) {
+        self.setUI()
+    }
+    
+    func requestError(alertError: UIAlertController) {
+        self.present(alertError, animated: true, completion: nil)
     }
     
     func setUI() {

@@ -8,47 +8,48 @@
 
 import UIKit
 
-class CategoriesTableViewController: UITableViewController {
+class CategoriesTableViewController: UITableViewController, loadCategoriesProtocol {
 
     private let cellIdentifier = "categoriesCell"
-    private let categoriesViewModel = CategoriesViewModel()
+    let categoriesViewModel = CategoriesViewModel()
     private let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set delegate to handle protocol
+        self.categoriesViewModel.delegate = self
+        
         self.configLoading()
-        self.categoriesViewModel.updatedList = {
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.tableView.reloadData()
-            }
-        }
         
-        //TODO: Show a alert indicate error
-        self.categoriesViewModel.hasError = {
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.showAlertError()
-            }
-        }
-        
+        //config table
         tableView.rowHeight = 60
         tableView.register(CategoriesTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
     }
+    
+    //refresh table with data
+    func sendCategories(categories: [String]) {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.tableView.reloadData()
+        }
+    }
+    
+    //show a alert if request fail
+    func requestError(alertError: UIAlertController) {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.present(alertError, animated: true, completion: nil)
+        }
+    }
 
+    //show a activityIndicator when request in progress
     func configLoading() {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = UIColor.black
         tableView.backgroundView = activityIndicator
         self.activityIndicator.startAnimating()
-    }
-    
-    func showAlertError() {
-        let alert = UIAlertController(title: "Sorry :(", message: "We can't load categories from server.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Table view data source
@@ -60,7 +61,6 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categoriesViewModel.numberOfRows()
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! CategoriesTableViewCell
@@ -74,6 +74,7 @@ class CategoriesTableViewController: UITableViewController {
     }
 
     // MARK: - Navigation
+    //pass selected catetory to jokeViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! JokesViewController
         vc.category = self.categoriesViewModel.categories[sender as! Int]

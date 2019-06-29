@@ -7,23 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
-public typealias UpdatedClosure = () -> ()
-public typealias ErrorClosure = () -> ()
+protocol loadCategoriesProtocol {
+    func sendCategories(categories: [String])
+    func requestError(alertError: UIAlertController)
+}
 
 public class CategoriesViewModel {
     
     private let network = Network()
-    public var categories = [String]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.updatedList?()
-            }
-        }
-    }
-    
-    public var hasError : ErrorClosure?
-    public var updatedList : UpdatedClosure?
+    public var categories = [String]()
+    var delegate : loadCategoriesProtocol?
     
     init() {
         self.getCategories()
@@ -33,17 +28,24 @@ public class CategoriesViewModel {
         self.network.get(endpoint: "/jokes/categories") { (data, error) in
             
             if (error != nil) {
-                self.hasError?()
+                self.delegate?.requestError(alertError: self.prepareAlertError())
                 return
             }
             
             //decode JSON data
             do {
                 self.categories = try JSONDecoder().decode([String].self, from: data as! Data)
+                self.delegate?.sendCategories(categories: self.categories)
             } catch let jsonError {
                 print(jsonError)
             }
         }
+    }
+    
+    func prepareAlertError() -> UIAlertController {
+        let alert = UIAlertController(title: "Sorry :(", message: "We can't load categories from server.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
     }
     
     public func numberOfRows() -> Int {

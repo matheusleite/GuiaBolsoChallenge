@@ -10,35 +10,44 @@ import UIKit
 import Foundation
 import Kingfisher
 
+protocol loadJokeProtocol {
+    func sendJoke(joke: Joke)
+    func requestError(alertError: UIAlertController)
+}
+
 public class JokesViewModel {
     
+    private var joke : Joke?
     private var network = Network()
-    public var hasError : ErrorClosure?
-    public var loadJoke : UpdatedClosure?
-    
-    private var joke : Joke? {
-        didSet {
-            DispatchQueue.main.async {
-                self.loadJoke?()
-            }
-        }
-    }
+    var delegate: loadJokeProtocol? = nil
     
     init(category: String) {
         self.getJokeWithCategory(category: category)
+    }
+    
+    func prepareAlertError() -> UIAlertController {
+        let alert = UIAlertController(title: "Sorry :(", message: "We can't load joke from server.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
     }
     
     public func getJokeWithCategory(category: String) {
         self.network.get(endpoint: "/jokes/random?category=\(category)") { (data, error) in
             
             if (error != nil) {
-                self.hasError?()
+                DispatchQueue.main.async {
+                    self.delegate?.requestError(alertError: self.prepareAlertError())
+                }
                 return
             }
             
             //decode JSON data
             do {
                 self.joke = try JSONDecoder().decode(Joke.self, from: data as! Data)
+                
+                DispatchQueue.main.async {
+                    self.delegate?.sendJoke(joke: self.joke!)
+                }
             } catch let jsonError {
                 print(jsonError)
             }

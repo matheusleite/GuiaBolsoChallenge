@@ -13,7 +13,7 @@
         <!--Categories-->
         <scene sceneID="eA0-fa-4dI">
             <objects>
-                <tableViewController id="IiV-78-CSk" customClass="CategoriesTableViewController" customModule="GuiaBolsoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoriesTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IiV-78-CSk" customClass="CategoriesTableViewController" customModule="GuiaBolsoChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pah-l4-DYt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
         <!--Random joke-->
         <scene sceneID="wTW-a1-7pU">
             <objects>
-                <viewController title="Random joke" id="AcK-6t-e5V" customClass="JokesViewController" customModule="GuiaBolsoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JokesVC" title="Random joke" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AcK-6t-e5V" customClass="JokesViewController" customModule="GuiaBolsoChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JLG-X0-yvI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,9 +58,11 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tJw-dE-m8n">
                                         <rect key="frame" x="99" y="27" width="150" height="150"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="iconImage"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbB-on-gAN">
                                         <rect key="frame" x="17" y="214" width="314" height="131"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="jokeLabel"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="131" id="eng-YU-57z"/>
                                         </constraints>
