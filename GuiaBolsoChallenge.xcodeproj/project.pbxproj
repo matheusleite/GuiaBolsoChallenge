@@ -25,6 +25,8 @@
 		3CC23A7D22C5B7E900F64DB5 /* JokesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A7C22C5B7E900F64DB5 /* JokesViewControllerTests.swift */; };
 		3CC23A8122C5B86500F64DB5 /* CategoriesTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A8022C5B86500F64DB5 /* CategoriesTableViewUITests.swift */; };
 		3CC23A8322C5B87600F64DB5 /* JokesViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A8222C5B87600F64DB5 /* JokesViewControllerUITests.swift */; };
+		3CC23A8522C6A6BF00F64DB5 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A8422C6A6BF00F64DB5 /* NetworkTests.swift */; };
+		3CC23A8922C7B71D00F64DB5 /* CategoriesCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC23A8822C7B71D00F64DB5 /* CategoriesCellTests.swift */; };
 		59B42BF828C7B7CCF58CC728 /* Pods_GuiaBolsoChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F37CBBBC174BC4A2741833 /* Pods_GuiaBolsoChallengeTests.framework */; };
 		9AE7B8BBB60428298C02D16A /* Pods_GuiaBolsoChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EA8E817610553F6E670ED2 /* Pods_GuiaBolsoChallengeUITests.framework */; };
 		D646AD8BF9872F72EC269A56 /* Pods_GuiaBolsoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0A9B0EEA7AA3D24B1A95BA /* Pods_GuiaBolsoChallenge.framework */; };
@@ -74,6 +76,8 @@
 		3CC23A7C22C5B7E900F64DB5 /* JokesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewControllerTests.swift; sourceTree = "<group>"; };
 		3CC23A8022C5B86500F64DB5 /* CategoriesTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewUITests.swift; sourceTree = "<group>"; };
 		3CC23A8222C5B87600F64DB5 /* JokesViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewControllerUITests.swift; sourceTree = "<group>"; };
+		3CC23A8422C6A6BF00F64DB5 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		3CC23A8822C7B71D00F64DB5 /* CategoriesCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCellTests.swift; sourceTree = "<group>"; };
 		4E2987C83B2404055D85E5AE /* Pods-GuiaBolsoChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeUITests/Pods-GuiaBolsoChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A13EF7B78C2F3D9E7462FB9 /* Pods-GuiaBolsoChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuiaBolsoChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuiaBolsoChallengeTests/Pods-GuiaBolsoChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		75F37CBBBC174BC4A2741833 /* Pods_GuiaBolsoChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuiaBolsoChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +158,8 @@
 				3CC23A4822C4297200F64DB5 /* Info.plist */,
 				3CC23A7A22C5B7D300F64DB5 /* CategoriesTableViewTests.swift */,
 				3CC23A7C22C5B7E900F64DB5 /* JokesViewControllerTests.swift */,
+				3CC23A8422C6A6BF00F64DB5 /* NetworkTests.swift */,
+				3CC23A8822C7B71D00F64DB5 /* CategoriesCellTests.swift */,
 			);
 			path = GuiaBolsoChallengeTests;
 			sourceTree = "<group>";
@@ -474,6 +480,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC23A8522C6A6BF00F64DB5 /* NetworkTests.swift in Sources */,
+				3CC23A8922C7B71D00F64DB5 /* CategoriesCellTests.swift in Sources */,
 				3CC23A7D22C5B7E900F64DB5 /* JokesViewControllerTests.swift in Sources */,
 				3CC23A7B22C5B7D300F64DB5 /* CategoriesTableViewTests.swift in Sources */,
 			);

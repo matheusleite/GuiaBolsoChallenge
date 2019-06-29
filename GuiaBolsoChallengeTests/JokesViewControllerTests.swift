@@ -7,27 +7,62 @@
 //
 
 import XCTest
+@testable import GuiaBolsoChallenge
 
 class JokesViewControllerTests: XCTestCase {
-
+    
+    var viewController: JokesViewController!
+    var window: UIWindow!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        window = UIWindow()
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        viewController = storyboard.instantiateViewController(withIdentifier: "JokesVC")
+            as? JokesViewController
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        window = nil
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func loadView() {
+        window.addSubview(viewController.view)
+        RunLoop.current.run(until: Date())
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testCardLayout() {
+        loadView()
+        viewController.viewDidLayoutSubviews()
+        
+        XCTAssertEqual(viewController.cardView.layer.shadowColor, UIColor.black.cgColor)
+        XCTAssertEqual(viewController.cardView.layer.shadowOpacity, 0.3)
+        XCTAssertEqual(viewController.cardView.layer.shadowOffset, .zero)
+        XCTAssertEqual(viewController.cardView.layer.shadowRadius, 5)
+        XCTAssertEqual(viewController.cardView.layer.cornerRadius, 10)
+    }
+    
+    func testComponents () {
+        loadView()
+        
+        XCTAssertNotNil(viewController.cardView)
+        XCTAssertNotNil(viewController.textLabel)
+        XCTAssertNotNil(viewController.iconImageView)
+    }
+    
+    func testContent () {
+        loadView()
+        
+        //create fake joke data
+        let data = "{ \"icon_url\": \"https://assets.chucknorris.host/img/avatar/chuck-norris.png\",\"value\": \"Time waits for no man. Unless that man is Chuck Norris.\" }".data(using: .utf8)!
+        
+        self.viewController.jokesViewModel?.joke = try? JSONDecoder().decode(Joke.self, from: data)
+        
+        viewController.setUI()
+        
+        XCTAssertFalse(viewController.textLabel.text!.isEmpty)
     }
 
 }

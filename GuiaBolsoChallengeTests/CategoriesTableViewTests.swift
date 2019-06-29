@@ -7,27 +7,34 @@
 //
 
 import XCTest
+@testable import GuiaBolsoChallenge
 
 class CategoriesTableViewTests: XCTestCase {
 
+    var viewController: CategoriesTableViewController!
+    var window: UIWindow!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        window = UIWindow()
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        viewController = storyboard.instantiateViewController(withIdentifier: "CategoriesTVC")
+            as? CategoriesTableViewController
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        window = nil
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func loadView() {
+        window.addSubview(viewController.view)
+        RunLoop.current.run(until: Date())
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testUI () {
+        XCTAssertNotNil(viewController.tableView)
     }
-
+    
 }

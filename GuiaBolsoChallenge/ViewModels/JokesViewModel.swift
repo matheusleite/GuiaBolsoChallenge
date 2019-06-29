@@ -17,11 +17,12 @@ protocol loadJokeProtocol {
 
 public class JokesViewModel {
     
-    private var joke : Joke?
+    var joke : Joke?
     private var network = Network()
-    var delegate: loadJokeProtocol? = nil
+    var delegate : loadJokeProtocol
     
-    init(category: String) {
+    init(category: String, loadProtocol: loadJokeProtocol) {
+        self.delegate = loadProtocol
         self.getJokeWithCategory(category: category)
     }
     
@@ -36,7 +37,7 @@ public class JokesViewModel {
             
             if (error != nil) {
                 DispatchQueue.main.async {
-                    self.delegate?.requestError(alertError: self.prepareAlertError())
+                    self.delegate.requestError(alertError: self.prepareAlertError())
                 }
                 return
             }
@@ -46,7 +47,7 @@ public class JokesViewModel {
                 self.joke = try JSONDecoder().decode(Joke.self, from: data as! Data)
                 
                 DispatchQueue.main.async {
-                    self.delegate?.sendJoke(joke: self.joke!)
+                    self.delegate.sendJoke(joke: self.joke!)
                 }
             } catch let jsonError {
                 print(jsonError)
@@ -60,6 +61,7 @@ public class JokesViewModel {
         imageView.kf.setImage(with: url, options: [.transition(.fade(0.2))])
         imageView.kf.indicatorType = .activity
         
+        //image caching
         let resource = ImageResource(downloadURL: url, cacheKey: self.joke?.icon_url)
         imageView.kf.setImage(with: resource)
     }

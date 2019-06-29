@@ -29,6 +29,19 @@ class CategoriesTableViewUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        
+        //verify if activity indicator shows
+        XCTAssert(app.activityIndicators.element(boundBy: 0).exists)
+        
+        //verify if list appears
+        let table = app.tables.element(boundBy: 0)
+        XCTAssert(table.exists)
+        
+        sleep(5)
+        
+        //verify item count
+        XCTAssertEqual(table.cells.count, 16)
     }
 
 }

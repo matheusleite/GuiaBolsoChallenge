@@ -9,7 +9,7 @@
 import Foundation
 
 public class CategoriesTableViewCellViewModel {
-    private let categoryName: String
+    public let categoryName: String
     
     init(_ categoryName: String) {
         self.categoryName = categoryName

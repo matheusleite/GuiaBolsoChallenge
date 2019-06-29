@@ -10,20 +10,16 @@ import UIKit
 
 class JokesViewController: UIViewController, loadJokeProtocol {
 
+    var category = ""
     var jokesViewModel : JokesViewModel?
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
-    var category = "" {
-        didSet {
-            self.jokesViewModel = JokesViewModel(category: self.category)
-            self.jokesViewModel?.delegate = self
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.jokesViewModel = JokesViewModel(category: self.category, loadProtocol: self)
     }
     
     override func viewDidLayoutSubviews() {
