@@ -30,3 +30,5 @@ Aperte 'Run' (ou Command+R)
 Para executar os testes primeiro altere o Scheme para: GuiaBolsoChallengeTests 
 
 Depois efetue o comando Command + U
+
+Cobertura: 77,5%
